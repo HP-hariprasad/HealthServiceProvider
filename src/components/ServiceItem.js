@@ -6,9 +6,6 @@ import { fetchSelectedServiceSucceed } from '../actions/actionCreators'
 
 const ServiceItem = ({ item }) => {
   const dispatch = useDispatch()
-
-  // const select = useCallback(() => dispatch(fetchSelectedServiceSucceed(item)), [item, dispatch])
-
   const select = (e,data) => {
     dispatch(fetchSelectedServiceSucceed(data))
   }
