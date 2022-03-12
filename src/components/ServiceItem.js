@@ -1,16 +1,20 @@
 import React from 'react';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 import { connect,useDispatch } from 'react-redux';
 import { fetchSelectedServiceSucceed } from '../actions/actionCreators'
 
 const ServiceItem = ({ item }) => {
   const dispatch = useDispatch()
 
-  const onClickHandler = (e,data) => {
-    dispatch(fetchSelectedServiceSucceed(data.id))
+  // const select = useCallback(() => dispatch(fetchSelectedServiceSucceed(item)), [item, dispatch])
+
+  const select = (e,data) => {
+    dispatch(fetchSelectedServiceSucceed(data))
   }
 
   return (
-    <li id={item.id} onClick={(e)=>onClickHandler(e,item)} >{item.id}</li>
+    <ListItem button onClick={(e)=>select(e,item)} ><ListItemText primary={item.id} /></ListItem>
   );
 }
 export default connect()(ServiceItem)

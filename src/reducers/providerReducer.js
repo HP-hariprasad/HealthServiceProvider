@@ -8,7 +8,6 @@ const initialState = {
 }
 
 export const ProviderReducer = (state = initialState, action) => {
-    debugger;
     switch (action.type) {
         case PROVIDER_LIST_PENDING:
             return {

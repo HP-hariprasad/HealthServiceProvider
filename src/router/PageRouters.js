@@ -17,3 +17,5 @@ export const PageRouters = () => {
     </Suspense>
   );
 };
+
+export default PageRouters
